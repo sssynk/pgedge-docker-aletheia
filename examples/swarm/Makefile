@@ -22,4 +22,4 @@ connect:
 # Requires n1 and n2 entries in /etc/hosts
 # 127.0.0.1 n1
 # 127.0.0.1 n2
-	PGSSLMODE=require psql -h $(NODE_NAME) -p 5432 -U admin defaultdb
+	PGSSLMODE=require psql -h $(NODE_NAME) -p 5431 -U admin defaultdb

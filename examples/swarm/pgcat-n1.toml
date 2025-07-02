@@ -30,6 +30,6 @@ username = "app"
 
 [pools.defaultdb.shards.0]
 servers = [
-  ["postgres-n1", 5432, "Primary"]
+  ["postgres-n1", 5431, "Primary"]
 ]
 database = "defaultdb"

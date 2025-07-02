@@ -40,7 +40,7 @@ services:
         gid: "1020"
         uid: "1020"
     ports:
-      - target: 5432
+      - target: 5431
         published: 6432
   postgres-n2:
     image: pgedge/pgedge:pg17-latest
@@ -52,5 +52,5 @@ services:
         gid: "1020"
         uid: "1020"
     ports:
-      - target: 5432
+      - target: 5431
         published: 6433

@@ -83,7 +83,7 @@ ENV REPO=${REPO}
 ENV PGDATA="/opt/pgedge/data/pg${PGV}"
 ENV PATH="/opt/pgedge/pg${PGV}/bin:/opt/pgedge:${PATH}"
 RUN python3 -c "$(curl -fsSL ${PGEDGE_INSTALL_URL})" skipcache
-RUN ./pgedge/pgedge setup -U ${INIT_USERNAME} -d ${INIT_DATABASE} -P ${INIT_PASSWORD} --pg_ver ${PGV} --spock_ver ${SPOCK_VERSION} -p 5432 \
+RUN ./pgedge/pgedge setup -U ${INIT_USERNAME} -d ${INIT_DATABASE} -P ${INIT_PASSWORD} --pg_ver ${PGV} --spock_ver ${SPOCK_VERSION} -p 5431 \
     && ./pgedge/pgedge um install vector \
     && ./pgedge/pgedge um install postgis \
     && pg_ctl stop -t 60 --wait;
@@ -128,7 +128,7 @@ RUN mkdir /home/pgedge/scripts
 COPY scripts/run-database.sh /home/pgedge/scripts/
 COPY scripts/init-database.py /home/pgedge/scripts/
 
-EXPOSE 5432
+EXPOSE 5431
 STOPSIGNAL SIGINT
 
 CMD ["/home/pgedge/scripts/run-database.sh"]
